@@ -14,7 +14,7 @@ bestTrades = []
 def takeTrade(trade):
     route = [Web3.toChecksumAddress(t['address']) for t in trade['path']]
     to = Web3.toChecksumAddress(config['address'])
-    deadline = int(time.time() + 1000)
+    deadline = int(time.time() + 500)
     tx = router.functions.swapExactTokensForTokens(
         amountIn,
         amountIn,
@@ -50,7 +50,7 @@ def main(pairs):
     if trade['profit'] > 0:
         tx = takeTrade(trade)
         print('tx:', tx)
-
+        time.sleep(500)
 
 if __name__ == "__main__":
     pairs = buildGraph(tokens)
