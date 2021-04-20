@@ -1,1 +1,2 @@
-Pancake Swap Arbitrage Bot
+# Pancake Swap Arbitrage Bot
+Edit config.json to run
